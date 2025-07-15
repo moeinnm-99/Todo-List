@@ -1,22 +1,91 @@
 # Todo-List
 
+# 📝 Luminous Tasks - A Cosmic To-Do List App ✨
 
-# Final Notes
+<img src=""></img>
+## 🌟 Overview
 
-What's in the files?
+Luminous Tasks is a beautifully designed, interactive to-do list application with a cosmic theme. This web app combines stunning visual effects with practical task management features, creating an enjoyable user experience.
 
-1. The code in the IPython notebooks.
-2. The weights for all the models. The best model is named as 'cnn-parameters-improvement-23-0.91.model'.
-3. The models are stored as *.model* files. They can be restored as follows:
+## 🚀 Features
 
+- **Cosmic Design**: Stellar gradient background with animated particles
+- **Task Management**: Add, edit, mark as complete, and delete tasks
+- **Deadline Tracking**: Set and visualize due dates
+- **Smart Filtering**: View all, pending, or completed tasks
+- **Urgent Alerts**: Tasks with approaching deadlines pulse with golden glow
+- **Responsive**: Works beautifully on all device sizes
+- **Local Storage**: Tasks persist between sessions
 
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3 (with animations and gradients)
+- JavaScript (ES6)
+- Local Storage API
+
+## 🎨 Design Highlights
+
+- Glass-morphism UI elements
+- Smooth animations and transitions
+- Interactive hover effects
+- Elegant typography
+- Dark theme with vibrant accents
+
+## 📦 Installation
+
+No installation required! Simply open the `index.html` file in any modern web browser.
+
+## 🖥️ Usage
+
+1. **Add a Task**:
+   - Type your task in the input field
+   - Optionally set a deadline
+   - Click "Add" or press Enter
+
+2. **Manage Tasks**:
+   - Click the circle to mark as complete
+   - Click the "✕" to delete a task
+   - Click on task text or deadline to edit
+
+3. **Filter Tasks**:
+   - Use the filter buttons to view All, Pending, or Completed tasks
+
+## 🌌 Special Effects
+
+- Shooting stars follow your cursor
+- Tasks animate when added or completed
+- Beautiful empty states with twinkling stars
+- Visual feedback for all interactions
+
+## 📱 Responsive Design
+
+The app is fully responsive and works on:
+- Desktop
+- Tablet
+- Mobile devices
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Credits
+
+Created with ❤️ by [Your Name]
+
+---
+
+### 🌠 Preview
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/luminous-tasks.git
+
+# Open in browser
+open index.html
 ```
-from tensorflow.keras.models import load_model
-best_model = load_model(filepath='models/cnn-parameters-improvement-23-0.91.model')
-```
 
-4. The original data in the folders named 'yes' and 'no'. And, the augmented data in the folder named 'augmented data'.
-
+Experience the cosmic productivity! ✨
 
 Contributes are welcome!
 <br>Thank you!
