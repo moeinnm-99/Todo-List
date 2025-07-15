@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luminous Tasks</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+    /* Cosmic Color Scheme */
+    :root {
+      --cosmic-purple: #7b2dff;
+      --starlight-blue: #4d8cff;
+      --nebula-pink: #ff2d7b;
+      --galaxy-dark: #0f0c29;
+      --cosmic-dust: rgba(255,255,255,0.12);
+      --star-light: #f0e9ff;
+      --comet-tail: rgba(255,255,255,0.6);
+      --supernova: #ffcc00;
+      --black-hole: rgba(0,0,0,0.3);
+      --aurora-green: #00ffaa;
+      --cosmic-gradient: linear-gradient(135deg, var(--cosmic-purple), var(--starlight-blue), var(--nebula-pink));
+    }
+
+    /* Cosmic Background Animation */
+    @keyframes cosmic-drift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--cosmic-gradient);
+      background-size: 400% 400%;
+      animation: cosmic-drift 20s ease infinite;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      color: var(--star-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Cosmic Particles */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, var(--supernova) 0%, transparent 2%),
+        radial-gradient(circle at 80% 50%, var(--aurora-green) 0%, transparent 3%),
+        radial-gradient(circle at 40% 70%, white 0%, transparent 1.5%);
+      background-size: 200% 200%;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: -1;
+      animation: cosmic-drift 40s linear infinite;
+    }
+
+    /* Celestial Container */
+    .cosmic-container {
+      background: rgba(15, 12, 41, 0.7);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 540px;
+      padding: 48px 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.1),
+        0 8px 32px rgba(31, 38, 135, 0.37),
+        0 0 40px rgba(123, 45, 255, 0.2);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .cosmic-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(123, 45, 255, 0.1),
+        rgba(77, 140, 255, 0.05),
+        rgba(255, 45, 123, 0.1)
+      );
+      transform: rotate(30deg);
+      z-index: -1;
+      animation: cosmic-shine 8s linear infinite;
+    }
+
+    @keyframes cosmic-shine {
+      0% { transform: rotate(30deg) translate(-10%, -10%); }
+      100% { transform: rotate(30deg) translate(10%, 10%); }
+    }
+
+    /* Celestial Header */
+    .cosmic-header {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3rem;
+      margin: 0 0 40px;
+      text-align: center;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #fff, var(--aurora-green), var(--supernova));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      padding-bottom: 16px;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    }
+
+    .cosmic-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cosmic-purple), var(--starlight-blue), var(--nebula-pink));
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--cosmic-purple);
+    }
+
+    /* Stellar Form */
+    .stellar-form {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .cosmic-input-group {
+      flex: 1;
+      position: relative;
+    }
+
+    .cosmic-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 18px 24px;
+      font-size: 1.15rem;
+      color: white;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      outline: none;
+      box-shadow: 
+        inset 0 0 8px rgba(255, 255, 255, 0.05),
+        0 2px 4px rgba(0,0,0,0.1);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cosmic-input::placeholder {
+      color: rgba(210, 199, 255, 0.5);
+      font-style: italic;
+    }
+
+    .cosmic-input:focus {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow:
+        inset 0 0 12px rgba(255, 255, 255, 0.3),
+        0 0 15px 3px var(--cosmic-purple);
+      border-color: var(--cosmic-purple);
+      transform: translateY(-2px);
+    }
+
+    /* Floating Constellations */
+    .cosmic-label {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      background: var(--galaxy-dark);
+      padding: 0 10px;
+      font-size: 0.85rem;
+      color: var(--aurora-green);
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid var(--cosmic-purple);
+    }
+
+    .cosmic-input:focus + .cosmic-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Supernova Button */
+    .supernova-btn {
+      background: linear-gradient(145deg, var(--cosmic-purple), var(--nebula-pink));
+      border: none;
+      border-radius: 16px;
+      padding: 18px 36px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.15rem;
+      box-shadow:
+        0 8px 20px rgba(123, 45, 255, 0.5),
+        0 0 0 1px rgba(255,255,255,0.1);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .supernova-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, var(--nebula-pink), var(--cosmic-purple));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .supernova-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 12px 25px rgba(123, 45, 255, 0.7),
+        0 0 0 1px rgba(255,255,255,0.2);
+    }
+
+    .supernova-btn:hover::before {
+      opacity: 1;
+    }
+
+    .supernova-btn:active {
+      transform: translateY(1px);
+      box-shadow:
+        0 5px 15px rgba(123, 45, 255, 0.6),
+        0 0 0 1px rgba(255,255,255,0.1);
+    }
+
+    /* Galactic Filter Buttons */
+    .galactic-filters {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .galactic-filters::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .cosmic-filter {
+      background: transparent;
+      border: 2px solid transparent;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: rgba(210, 199, 255, 0.7);
+      letter-spacing: 1.2px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      cursor: pointer;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cosmic-filter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, var(--cosmic-purple), var(--starlight-blue));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cosmic-filter:hover {
+      color: white;
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 0 15px rgba(123, 45, 255, 0.3);
+    }
+
+    .cosmic-filter:hover::before {
+      opacity: 0.2;
+    }
+
+    .cosmic-filter.active {
+      background: rgba(123, 45, 255, 0.2);
+      color: white;
+      border-color: var(--cosmic-purple);
+      box-shadow: 
+        0 0 20px rgba(123, 45, 255, 0.4),
+        inset 0 0 10px rgba(123, 45, 255, 0.2);
+    }
+
+    .cosmic-filter.active::before {
+      opacity: 0.3;
+    }
+
+    /* Nebula Task List */
+    .nebula-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-height: 50vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--cosmic-purple) transparent;
+    }
+
+    .nebula-list::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .nebula-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .nebula-list::-webkit-scrollbar-thumb {
+      background-color: var(--cosmic-purple);
+      border-radius: 15px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    /* Stellar Task Item */
+    .stellar-task {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow:
+        0 4px 10px rgba(0,0,0,0.15),
+        inset 0 -2px 5px rgba(123, 45, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: stellar-appear 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    @keyframes stellar-appear {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stellar-task::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--cosmic-purple), var(--starlight-blue));
+      transition: all 0.3s ease;
+    }
+
+    .stellar-task:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+      box-shadow:
+        0 8px 15px rgba(0,0,0,0.2),
+        inset 0 -2px 5px rgba(123, 45, 255, 0.2);
+    }
+
+    .stellar-task:hover::before {
+      width: 8px;
+      background: linear-gradient(to bottom, var(--starlight-blue), var(--aurora-green));
+    }
+
+    .stellar-task.done {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .stellar-task.done::before {
+      background: var(--aurora-green);
+    }
+
+    /* Task Content */
+    .cosmic-text, .cosmic-deadline {
+      font-size: 1.1rem;
+      color: var(--star-light);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 0;
+      flex-grow: 1;
+      position: relative;
+    }
+
+    .cosmic-text:hover, .cosmic-deadline:hover {
+      color: var(--aurora-green);
+      text-shadow: 0 0 5px rgba(0, 255, 170, 0.3);
+    }
+
+    .cosmic-text.done {
+      text-decoration: line-through;
+      opacity: 0.6;
+      color: rgba(210, 199, 255, 0.6);
+      position: relative;
+    }
+
+    .cosmic-text.done::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--aurora-green);
+      animation: strike-through 0.3s ease-out forwards;
+    }
+
+    @keyframes strike-through {
+      to { width: 100%; }
+    }
+
+    .cosmic-deadline {
+      font-size: 0.9rem;
+      color: rgba(210, 199, 255, 0.7);
+      min-width: 120px;
+      text-align: right;
+      font-weight: 400;
+    }
+
+    .cosmic-deadline.urgent {
+      color: var(--supernova);
+      font-weight: 500;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.8; }
+      50% { opacity: 1; text-shadow: 0 0 5px var(--supernova); }
+      100% { opacity: 0.8; }
+    }
+
+    /* Action Buttons */
+    .cosmic-actions {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .cosmic-btn {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      color: rgba(210, 199, 255, 0.7);
+      font-size: 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cosmic-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cosmic-btn:hover {
+      transform: scale(1.1);
+      color: white;
+      box-shadow: 0 0 10px rgba(123, 45, 255, 0.3);
+    }
+
+    .cosmic-btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn-done:hover {
+      background: rgba(0, 255, 170, 0.1);
+      color: var(--aurora-green);
+      box-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+    }
+
+    .btn-delete:hover {
+      background: rgba(255, 45, 123, 0.1);
+      color: var(--nebula-pink);
+      box-shadow: 0 0 10px rgba(255, 45, 123, 0.3);
+    }
+
+    /* Edit Input */
+    .cosmic-edit {
+      font-size: 1.1rem;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      color: var(--galaxy-dark);
+      background: rgba(255,255,255,0.9);
+      box-shadow:
+        0 0 10px 2px var(--cosmic-purple);
+      transition: all 0.3s ease;
+      min-width: 160px;
+      max-width: 280px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cosmic-edit:focus {
+      box-shadow:
+        0 0 15px 3px var(--cosmic-purple);
+      transform: translateY(-2px);
+    }
+
+    /* Empty State */
+    .cosmic-empty {
+      text-align: center;
+      color: rgba(210, 199, 255, 0.5);
+      font-style: italic;
+      padding: 30px;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .cosmic-empty::before {
+      content: '✨';
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .cosmic-container {
+        padding: 36px 24px;
+        border-radius: 20px;
+      }
+      
+      .cosmic-header {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+      
+      .stellar-form {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+      
+      .supernova-btn {
+        width: 100%;
+        padding: 16px;
+      }
+      
+      .galactic-filters {
+        flex-wrap: wrap;
+      }
+      
+      .cosmic-filter {
+        flex: 1;
+        min-width: 100px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+      
+      .stellar-task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+      }
+      
+      .cosmic-deadline {
+        text-align: left;
+        font-size: 0.85rem;
+      }
+      
+      .cosmic-actions {
+        align-self: flex-end;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .cosmic-container {
+        padding: 30px 20px;
+        border-radius: 18px;
+      }
+      
+      .cosmic-header {
+        font-size: 1.8rem;
+      }
+      
+      .cosmic-filter {
+        min-width: 80px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="cosmic-container" role="main" aria-label="Cosmic To-Do List">
+    <h1 class="cosmic-header">Luminous Tasks</h1>
+    <form class="stellar-form" id="taskForm" aria-label="Add new task">
+      <div class="cosmic-input-group">
+        <input
+          type="text"
+          id="taskInput"
+          class="cosmic-input"
+          placeholder="Create a stellar task..."
+          aria-required="true"
+          aria-describedby="taskHint"
+          autocomplete="off"
+        />
+        <span class="cosmic-label">Task Description</span>
+      </div>
+      <div class="cosmic-input-group">
+        <input
+          type="date"
+          id="deadlineInput"
+          class="cosmic-input"
+          aria-label="Deadline for task"
+          aria-describedby="deadlineHint"
+        />
+        <span class="cosmic-label">Due Date</span>
+      </div>
+      <button type="submit" class="supernova-btn" aria-label="Add task">Add</button>
+    </form>
+    <div class="galactic-filters" role="tablist" aria-label="Filter tasks">
+      <button role="tab" aria-selected="true" class="cosmic-filter active" id="allBtn">All</button>
+      <button role="tab" aria-selected="false" class="cosmic-filter" id="pendingBtn">Pending</button>
+      <button role="tab" aria-selected="false" class="cosmic-filter" id="doneBtn">Completed</button>
+    </div>
+    <ul class="nebula-list" aria-live="polite" aria-relevant="additions removals">
+      <!-- Tasks will appear here like shooting stars -->
+    </ul>
+  </section>
+
+  <script>
+    const taskForm = document.getElementById('taskForm');
+    const taskInput = document.getElementById('taskInput');
+    const deadlineInput = document.getElementById('deadlineInput');
+    const taskList = document.querySelector('.nebula-list');
+    const allBtn = document.getElementById('allBtn');
+    const pendingBtn = document.getElementById('pendingBtn');
+    const doneBtn = document.getElementById('doneBtn');
+
+    // Initialize with sample tasks if empty
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    if (tasks.length === 0) {
+      tasks = [
+        { text: "Explore the cosmos", deadline: "", done: false },
+        { text: "Discover new stars", deadline: new Date(Date.now() + 86400000 * 2).toISOString().slice(0,10), done: false },
+        { text: "Complete this beautiful app", deadline: new Date().toISOString().slice(0,10), done: true }
+      ];
+      saveTasks();
+    }
+    
+    let filter = 'all';
+
+    // Set default deadline to today
+    deadlineInput.valueAsDate = new Date();
+
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function checkUrgentDeadline(deadline) {
+      if (!deadline) return false;
+      const today = new Date();
+      const deadlineDate = new Date(deadline);
+      const diffTime = deadlineDate - today;
+      const diffDays = Math.ceil(diffTime / (86400000));
+      return diffDays <= 3 && diffDays >= 0;
+    }
+
+    function renderTasks() {
+      taskList.innerHTML = '';
+      
+      const filtered = tasks.filter(t => {
+        if (filter === 'pending') return !t.done;
+        if (filter === 'done') return t.done;
+        return true;
+      }).sort((a, b) => {
+        // Sort by deadline (soonest first), then by completion status
+        if (a.done !== b.done) return a.done ? 1 : -1;
+        if (a.deadline && b.deadline) return new Date(a.deadline) - new Date(b.deadline);
+        if (a.deadline) return -1;
+        if (b.deadline) return 1;
+        return 0;
+      });
+      
+      if(filtered.length === 0) {
+        const emptyState = document.createElement('div');
+        emptyState.className = 'cosmic-empty';
+        emptyState.textContent = filter === 'all' 
+          ? 'The cosmos is empty... Add your first task!' 
+          : filter === 'pending' 
+            ? 'All tasks completed! Enjoy the cosmic peace.' 
+            : 'No completed tasks yet. Keep shining!';
+        taskList.appendChild(emptyState);
+        return;
+      }
+      
+      filtered.forEach((task, i) => {
+        const originalIndex = tasks.findIndex(t => t.text === task.text && t.deadline === task.deadline);
+        const li = document.createElement('li');
+        li.className = `stellar-task ${task.done ? 'done' : ''}`;
+        li.style.animationDelay = `${i * 0.1}s`;
+
+        const taskText = document.createElement('span');
+        taskText.className = `cosmic-text ${task.done ? 'done' : ''}`;
+        taskText.textContent = task.text;
+        taskText.title = "Click to edit task";
+        taskText.tabIndex = 0;
+        taskText.setAttribute('role', 'textbox');
+        taskText.setAttribute('aria-label', `Task: ${task.text}`);
+        taskText.addEventListener('click', () => editText(originalIndex, 'text'));
+        taskText.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter') { e.preventDefault(); editText(originalIndex, 'text'); }
+        });
+
+        const deadlineText = document.createElement('span');
+        deadlineText.className = 'cosmic-deadline';
+        if (task.deadline) {
+          deadlineText.textContent = new Date(task.deadline).toLocaleDateString('en-US', { 
+            weekday: 'short', 
+            month: 'short', 
+            day: 'numeric' 
+          });
+          if (checkUrgentDeadline(task.deadline) && !task.done) {
+            deadlineText.classList.add('urgent');
+          }
+        } else {
+          deadlineText.textContent = 'No deadline';
+        }
+        
+        deadlineText.title = "Click to edit deadline";
+        deadlineText.tabIndex = 0;
+        deadlineText.setAttribute('role', 'textbox');
+        deadlineText.setAttribute('aria-label', `Due: ${deadlineText.textContent}`);
+        deadlineText.addEventListener('click', () => editText(originalIndex, 'deadline'));
+        deadlineText.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter') { e.preventDefault(); editText(originalIndex, 'deadline'); }
+        });
+
+        const btnDone = document.createElement('button');
+        btnDone.className = 'cosmic-btn btn-done';
+        btnDone.innerHTML = task.done ? '✓' : '○';
+        btnDone.setAttribute('aria-label', task.done ? 'Mark task as not done' : 'Mark task as done');
+        btnDone.addEventListener('click', (e) => {
+          e.stopPropagation();
+          tasks[originalIndex].done = !tasks[originalIndex].done;
+          saveTasks();
+          renderTasks();
+        });
+
+        const btnDelete = document.createElement('button');
+        btnDelete.className = 'cosmic-btn btn-delete';
+        btnDelete.innerHTML = '✕';
+        btnDelete.setAttribute('aria-label', 'Delete task');
+        btnDelete.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // Add delete animation
+          li.style.transform = 'translateX(100%) rotate(10deg)';
+          li.style.opacity = '0';
+          setTimeout(() => {
+            tasks.splice(originalIndex, 1);
+            saveTasks();
+            renderTasks();
+          }, 300);
+        });
+
+        const buttonsGroup = document.createElement('div');
+        buttonsGroup.className = 'cosmic-actions';
+        buttonsGroup.appendChild(btnDone);
+        buttonsGroup.appendChild(btnDelete);
+
+        li.appendChild(taskText);
+        li.appendChild(deadlineText);
+        li.appendChild(buttonsGroup);
+
+        taskList.appendChild(li);
+      });
+    }
+
+    function editText(index, field) {
+      const task = tasks[index];
+      const li = taskList.children[index];
+      const originalText = field === 'text' ? task.text : task.deadline;
+
+      const input = document.createElement('input');
+      input.className = 'cosmic-edit';
+      input.type = field === 'text' ? 'text' : 'date';
+      input.value = field === 'text' ? task.text : (task.deadline ? task.deadline : '');
+      
+      if (field === 'date' && !task.deadline) {
+        // Set default date to today when editing empty deadline
+        input.valueAsDate = new Date();
+      }
+
+      function saveEdit() {
+        if(field === 'text') {
+          if(input.value.trim() !== '') {
+            tasks[index].text = input.value.trim();
+          }
+        } else {
+          tasks[index].deadline = input.value ? input.value : '';
+        }
+        saveTasks();
+        renderTasks();
+      }
+
+      input.addEventListener('blur', saveEdit);
+      input.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') {
+          saveEdit();
+        }
+        if(e.key === 'Escape') {
+          renderTasks();
+        }
+      });
+
+      li.innerHTML = '';
+      li.appendChild(input);
+      input.focus();
+      if (field === 'text') input.select();
+    }
+
+    taskForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const text = taskInput.value.trim();
+      const deadline = deadlineInput.value;
+      if(text) {
+        // Add new task with a beautiful animation
+        tasks.unshift({ text, deadline, done: false });
+        saveTasks();
+        renderTasks();
+        taskInput.value = '';
+        deadlineInput.valueAsDate = new Date(); // Reset to today
+        
+        // Add visual confirmation
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = '✓ Added!';
+        submitBtn.style.background = 'linear-gradient(145deg, var(--aurora-green), var(--starlight-blue))';
+        setTimeout(() => {
+          submitBtn.innerHTML = 'Add';
+          submitBtn.style.background = 'linear-gradient(145deg, var(--cosmic-purple), var(--nebula-pink))';
+        }, 1500);
+        
+        // Create a little "star" animation
+        const star = document.createElement('div');
+        star.style.position = 'absolute';
+        star.style.left = `${e.clientX - 10}px`;
+        star.style.top = `${e.clientY - 10}px`;
+        star.style.width = '20px';
+        star.style.height = '20px';
+        star.style.background = 'radial-gradient(circle, white, transparent 70%)';
+        star.style.borderRadius = '50%';
+        star.style.pointerEvents = 'none';
+        star.style.transform = 'scale(0)';
+        star.style.animation = 'star-explode 0.8s ease-out forwards';
+        document.body.appendChild(star);
+        
+        setTimeout(() => {
+          star.remove();
+        }, 800);
+      } else {
+        // Shake animation for empty input
+        taskInput.style.transform = 'translateX(-5px)';
+        setTimeout(() => {
+          taskInput.style.transform = 'translateX(5px)';
+          setTimeout(() => {
+            taskInput.style.transform = 'translateX(-5px)';
+            setTimeout(() => {
+              taskInput.style.transform = 'translateX(0)';
+            }, 50);
+          }, 50);
+        }, 50);
+      }
+    });
+
+    function setFilter(newFilter) {
+      filter = newFilter;
+      allBtn.classList.remove('active');
+      pendingBtn.classList.remove('active');
+      doneBtn.classList.remove('active');
+      allBtn.setAttribute('aria-selected', 'false');
+      pendingBtn.setAttribute('aria-selected', 'false');
+      doneBtn.setAttribute('aria-selected', 'false');
+      
+      if(newFilter === 'all') {
+        allBtn.classList.add('active');
+        allBtn.setAttribute('aria-selected', 'true');
+      } else if(newFilter === 'pending') {
+        pendingBtn.classList.add('active');
+        pendingBtn.setAttribute('aria-selected', 'true');
+      } else if(newFilter === 'done') {
+        doneBtn.classList.add('active');
+        doneBtn.setAttribute('aria-selected', 'true');
+      }
+      
+      renderTasks();
+    }
+
+    allBtn.addEventListener('click', () => setFilter('all'));
+    pendingBtn.addEventListener('click', () => setFilter('pending'));
+    doneBtn.addEventListener('click', () => setFilter('done'));
+
+    // Add starry background animation
+    document.addEventListener('mousemove', (e) => {
+      if (Math.random() > 0.98) {
+        const star = document.createElement('div');
+        star.style.position = 'fixed';
+        star.style.left = `${e.clientX}px`;
+        star.style.top = `${e.clientY}px`;
+        star.style.width = '2px';
+        star.style.height = '2px';
+        star.style.background = 'white';
+        star.style.borderRadius = '50%';
+        star.style.pointerEvents = 'none';
+        star.style.boxShadow = '0 0 5px 1px white';
+        star.style.animation = 'shooting-star 2s linear forwards';
+        document.body.appendChild(star);
+        
+        setTimeout(() => {
+          star.remove();
+        }, 2000);
+      }
+    });
+
+    // Initial render
+    renderTasks();
+    
+    // Focus task input on page load
+    setTimeout(() => {
+      taskInput.focus();
+    }, 500);
+  </script>
+
+  <style>
+    @keyframes star-explode {
+      0% { transform: scale(0); opacity: 1; }
+      50% { transform: scale(3); opacity: 0.8; }
+      100% { transform: scale(5); opacity: 0; }
+    }
+    
+    @keyframes shooting-star {
+      0% { transform: translate(0, 0); opacity: 1; }
+      70% { opacity: 0.8; }
+      100% { transform: translate(100px, -100px); opacity: 0; }
+    }
+  </style>
+</body>
+</html>
