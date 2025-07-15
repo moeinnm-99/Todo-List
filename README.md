@@ -1,119 +1,160 @@
-# Todo-List
 
-# 📝 Luminous Tasks - A Cosmic To-Do List App ✨
+# 🌌 Luminous Tasks - A Cosmic To-Do List ✨
 
-<img src=""></img>
-## 🌟 Overview
+![App Screenshot](https://github.com/moeinnm-99/Todo-List/blob/main/Output.png)
 
-Luminous Tasks is a beautifully designed, interactive to-do list application with a cosmic theme. This web app combines stunning visual effects with practical task management features, creating an enjoyable user experience.
+A beautifully designed, interactive to-do list application with stellar visual effects and powerful task management features.
 
-## 🚀 Features
+## ✨ Features
 
-- **Cosmic Design**: Stellar gradient background with animated particles
-- **Task Management**: Add, edit, mark as complete, and delete tasks
-- **Deadline Tracking**: Set and visualize due dates
-- **Smart Filtering**: View all, pending, or completed tasks
-- **Urgent Alerts**: Tasks with approaching deadlines pulse with golden glow
-- **Responsive**: Works beautifully on all device sizes
-- **Local Storage**: Tasks persist between sessions
+- **Cosmic UI Design**:
+  - Animated particle background
+  - Glass-morphism interface elements
+  - Smooth transitions and hover effects
 
-## 🛠️ Technologies Used
+- **Task Management**:
+  - Add, edit, and delete tasks
+  - Set and track deadlines
+  - Mark tasks as complete
+  - Filter by status (All/Pending/Completed)
 
+- **Smart Alerts**:
+  - Urgent tasks pulse with golden glow
+  - Visual feedback for all actions
+
+- **Technical**:
+  - Flask backend with SQLAlchemy
+  - Responsive design (desktop/tablet/mobile)
+  - Future Telegram notifications (coming soon)
+
+## 🛠️ Technologies
+
+**Backend**:
+- Python 3.7+
+- Flask
+- SQLAlchemy
+
+**Frontend**:
 - HTML5
-- CSS3 (with animations and gradients)
+- CSS3 (animations/gradients)
 - JavaScript (ES6)
-- Local Storage API
 
-## 🎨 Design Highlights
+## 🚀 Installation
 
-- Glass-morphism UI elements
-- Smooth animations and transitions
-- Interactive hover effects
-- Elegant typography
-- Dark theme with vibrant accents
+### Prerequisites
+- Python 3.7+
+- pip package manager
 
-## 📦 Installation
+### Setup
 
-No installation required! Simply open the `index.html` file in any modern web browser.
+1. Clone the repository:
+```bash
+git clone https://github.com/moeinnm-99/Todo-List.git
+cd Todo-List
+```
 
-## 🖥️ Usage
+2. Create and activate virtual environment:
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-1. **Add a Task**:
-   - Type your task in the input field
-   - Optionally set a deadline
+# Linux/macOS
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Initialize database:
+```bash
+flask db init
+flask db migrate
+flask db upgrade
+```
+
+5. Run the application:
+```bash
+# Windows
+python app.py
+
+# Linux/macOS
+python3 app.py
+```
+
+6. Access the app:
+```
+http://localhost:5000
+or
+127.0.0.1:5000
+```
+
+## 🖥️ Usage Guide
+
+1. **Adding Tasks**:
+   - Enter task in the input field
+   - (Optional) Set a deadline
    - Click "Add" or press Enter
 
-2. **Manage Tasks**:
-   - Click the circle to mark as complete
-   - Click the "✕" to delete a task
-   - Click on task text or deadline to edit
+2. **Managing Tasks**:
+   - ○ Mark as complete → ✓
+   - ✕ Delete task
+   - Click text/deadline to edit
 
-3. **Filter Tasks**:
-   - Use the filter buttons to view All, Pending, or Completed tasks
+3. **Filtering**:
+   - Use buttons to view:
+     - All tasks
+     - Pending only
+     - Completed only
 
-## 🌌 Special Effects
+## ⚙️ Configuration
 
-- Shooting stars follow your cursor
-- Tasks animate when added or completed
-- Beautiful empty states with twinkling stars
-- Visual feedback for all interactions
+Create `.env` file:
+```ini
+FLASK_APP=app.py
+FLASK_ENV=development
+SECRET_KEY=your-secret-key-here
+DATABASE_URI=sqlite:///instance/site.db
+```
 
-## 📱 Responsive Design
+## 🌟 Development
 
-The app is fully responsive and works on:
-- Desktop
-- Tablet
-- Mobile devices
+Run in development mode:
+```bash
+export FLASK_ENV=development
+flask run
+```
+
+Production deployment options:
+- Gunicorn
+- Waitress
+- Docker
 
 ## 📜 License
 
-This project is open source and available under the [MIT License](LICENSE).
+ٔخ ٔثث
 
-## 🙏 Credits
+## 👨‍💻 Author
 
-Created with ❤️ by [Your Name]
+**Moein Nouri**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/moein-nouri-62803731a/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/moeinnm_99)
+
+Contributions welcome! Feel free to open issues or submit PRs.
+
+## 🔮 Coming Soon
+- Telegram notification integration
+- User accounts system
+- Dark/light mode toggle
 
 ---
 
-### 🌠 Preview
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=moeinnm-99&show_icons=true&theme=radical)
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/luminous-tasks.git
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=moeinnm-99&layout=compact&theme=radical)
 
-# Open in browser
-open index.html
+Experience cosmic productivity! ✨🚀
 ```
-
-Experience the cosmic productivity! ✨
-
-Contributes are welcome!
-<br>Thank you!
-
-
-<br> <br> <br>
-## 📈 GitHub Stats 
-
-[![Anurag’s github stats](https://github-readme-stats.vercel.app/api?username=moeinnm-99)](https://github.com/moeinnm-99)
- 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=moeinnm-99&layout=compact)](https://github.com/moeinnm-99)
-
-<br> <br>
-
-## 🤝 Connect with me:
-
-<br>
-<a href="https://www.linkedin.com/in/moein-nouri-62803731a/"><img align="left" src="https://raw.githubusercontent.com/yushi1007/yushi1007/main/images/linkedin.svg" alt="Moeinnm-99 | LinkedIn" width="40px"/></a>
-
-<a href="https://instagram.com/moeinnm_99"><img align="left" src="https://raw.githubusercontent.com/yushi1007/yushi1007/main/images/instagram.svg" alt="Moeinnm-99 | Instagram" width="40px"/></a>
-
-<br> <br>
-- 💬 If you have any question/feedback, please do not hesitate to reach out to me!
-
-<br>
-
-## 🔭 I'm currently working on:
-
-- My old projects
-- Machine Learning Project That I Will Upload 
-- NLP And Opencv Projects (Image processing)
