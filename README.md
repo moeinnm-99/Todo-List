@@ -134,6 +134,7 @@ Production deployment options:
 - Docker
 
 ## 📜 License
+</br></br>
 
 
 ## 👨‍💻 Author
