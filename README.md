@@ -135,7 +135,6 @@ Production deployment options:
 
 ## 📜 License
 
-ٔخ ٔثث
 
 ## 👨‍💻 Author
 
